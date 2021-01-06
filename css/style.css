@@ -1,0 +1,533 @@
+/* =============================================================================
+   HTML5 CSS Reset Minified - Eric Meyer
+   ========================================================================== */
+
+   *::selection{
+    background: #f51a6b
+  }
+  
+  html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+  body{line-height:1}
+  article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+  nav ul{list-style:none}
+  blockquote,q{quotes:none}
+  blockquote:before,blockquote:after,q:before,q:after{content:none}
+  a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+  mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+  del{text-decoration:line-through}
+  abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+  table{border-collapse:collapse;border-spacing:0}
+  hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+  input,select{vertical-align:middle}
+  li{list-style:none}
+  
+  
+  /* =============================================================================
+     My CSS
+     ========================================================================== */
+  
+  /* ---- base ---- */
+  
+  @font-face{
+    font-family : 'Married';
+    src: url(../font/sweet\ purple.ttf);
+  }
+  
+  @font-face{
+    font-family: 'Birthstone';
+    src: url(../font/BirthstoneFormal.ttf);
+  }
+  
+  @font-face{
+    font-family : 'Roboto';
+    src : url(../font/Roboto-Regular.ttf);
+  }
+  
+  html,body{ 
+    width:100%;
+    height:100%;
+    background:rgb(255, 255, 255);
+  }
+  
+  html{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  .containers{
+    padding: 90px 90px 90px 90px;
+  }
+  
+  body{
+    font:normal 75% Arial, Helvetica, sans-serif;
+  }
+  
+  canvas{
+    display:block;
+    vertical-align:bottom;
+  }
+  
+  
+  /* ---- stats.js ---- */
+  
+  .count-particles{
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+  
+  .js-count-particles{
+    font-size: 1.1em;
+  }
+  
+  #stats,
+  .count-particles{
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  
+  #stats{
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+  }
+  
+  .count-particles{
+    border-radius: 0 0 3px 3px;
+  }
+  
+  
+  /* ---- particles.js container ---- */
+  
+  #particles-js{
+    width: 100%;
+    height: 100%;
+    background-color: #b61924;
+    background-image: url(../asset-website-wedding/wedding-img-1.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  
+  .particles-content h1{
+    font-size : 7vw;
+    color: white;
+    text-shadow: 2px 2px 3px #000;
+  }
+  
+  
+  .particles-content h3{
+    font-family: 'Married';
+    font-size: 6vw;
+    color: white;
+    text-shadow: 3px 3px 4px #000;
+    display : none;
+  }
+  
+    .particles-content .tampil{
+      display: block !important;
+    }
+  
+  .particles-content{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  
+  .banner-carve:before {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: url(../asset-website-wedding/wave-d.png) 100% 100% no-repeat;
+    background-size: contain
+  }
+  
+  /* .content{
+    height: auto;
+    background : linear-gradient(175deg, rgba(255,132,178,1) 47%, rgb(255, 255, 255) 100%);
+    padding-bottom: 50px;
+  
+      
+  } */
+  
+  .content {
+    position: relative;
+    height: auto;
+    padding-bottom : 100px;
+    background-image: linear-gradient(175deg, rgba(255,132,178,1) 47%, rgb(255, 255, 255) 100%);
+  }
+  
+  .content::after {
+    /* background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='pink' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 100,0 0,100' /%3E%3C/svg%3E");   
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    height: 10vw;
+    width: 100%;
+    position: absolute;
+    bottom: -10vw; */
+    content:'';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    background: linear-gradient(to top, #ffffff, transparent);
+  }
+  
+  .flexbox{
+    margin-top: -20px !important;
+  }
+  
+  
+  .flexbox,.flexbox2{
+    display: flex;
+    margin-top: 10vw;
+    
+  }
+  
+  .flexbox h2,.flexbox2 h2{
+    margin-top: 5vw;
+    font-size: 3vw;
+  }
+  
+  .flexbox h3, .flexbox2 h3{
+    font-size: 20px;
+    font-family : 'Roboto';
+  }
+  
+  /* .flexbox h2, .flexbox2 h2, .flexbox h3, .flexbox2 h3{
+    -webkit-text-stroke: 0.1px rgb(255, 0, 0);
+  } */
+  
+  .flex1, .flex2{
+    width: 50%;
+    padding : 10px;
+  }
+  
+  .waktu{
+    height: 90%;
+  }
+  
+  .waktuacara{
+    height: 100%;
+  }
+  
+  .waktuacara h2{
+    font-size: 5vw;
+    margin-bottom: 100px;
+    margin-top: 70px;
+    font-family: 'Birthstone';
+  }
+  
+  .img-nama h3, .img-nama h1{
+    font-size: 7vw;
+    font-family: 'Married';
+    text-shadow: 3px 3px 4px #000;
+  }
+  
+  .img-nama h1{
+    font-size: 10vw;
+  }
+  
+  .img-nama{
+    color: white;
+    position: relative;
+    margin-top: -50vw;
+    z-index: 99;
+    margin-bottom: 150px;
+  }
+  
+  .tempat{
+    padding-bottom: 100px;
+    margin: 0;
+  }
+  
+  .donasi{
+    position: fixed;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+  }
+  
+  strong{
+    font-size: 2vw;
+    color: white;
+    margin: 10px;
+    text-shadow: 3px 3px 4px #000;
+  }
+  
+  .ucap a{
+    font-size: 2vw;
+    margin: 10px;
+  }
+  
+  .donasi img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.5s;
+    animation-name: animatetop;
+    animation-duration: 0.5s
+  }
+  
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  .komen{
+    height: auto;
+    padding-bottom: 10px;
+    background:  linear-gradient(332deg, rgba(255,132,178,1) 56%, rgba(255,192,251,1) 100%);
+  }
+  
+  
+  .komen::before{
+    content:'';
+    position: absolute;
+    right: 0;
+    background-color:rgb(255, 51, 194);
+    width: 90px;
+    height: 190px;
+    z-index: 1;
+    margin-top: -50px;
+    margin-right: 30px;
+    box-shadow: 3px 3px 5px #000;
+    border-radius: 20px;
+  }
+  
+  .komen h1{
+    font-size: 7vw;
+    font-family: 'Married';
+    margin-bottom: 100px;
+    text-shadow: 3px 3px 5px #000;
+  }
+  
+  .komentarinput{
+    background-color: rgb(168, 3, 64);
+    padding: 30px !important;
+    height: 300px !important;
+    border-radius: 12px 0px;
+    box-shadow: 5px 5px 7px #fff;
+  }
+  
+  .ucap{
+    margin-top: -100px;
+  }
+  
+  .ucapan{
+    background-color: rgb(168, 3, 64);
+    padding: 20px;
+    color: white;
+    font-family: 'Married';
+    font-size: 20px;
+    border-radius: 12px 0px;
+    box-shadow: 7px 7px 5px rgb(228, 31, 146);
+  }
+  
+  footer{
+    padding-top: 30px;
+    height: 90px;
+    background: rgba(255,132,178,1);
+    color: white;
+    font-size: 15px;
+    font-family: 'Roboto';
+  }
+  
+  .plus h3{
+    font-family: 'Birthstone';
+    text-shadow: 3px 3px 4px rgb(255, 100, 185);
+  }
+  
+  
+  
+  /* .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999; 
+    padding-top: 50px;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    position: relative; 
+    background-color: white;
+    padding: 20px; 
+    margin: auto; 
+    width: 75%;  
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  .close-btn {
+    float: right; 
+    color: lightgray; 
+    font-size: 24px;  
+    font-weight: bold;
+  }
+  .close-btn:hover {
+    color: darkgray;
+  }
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  } */
+  
+  @media (min-width: 320px) and (max-width: 1024px){
+    .containers{
+      padding : 5px;
+    }
+  
+    .particles-content h1{
+      font-size: 7vw;
+    }
+    .particles-content h3{
+      font-size: 20vw;
+      display: block !important;
+    }
+    .particles-content .tampil{
+      display: none !important;
+    }
+    .content{
+      height: auto;
+      padding-bottom: 30vh;
+    }
+  
+    .img-nama h3{
+      font-size: 10vw;
+      margin-top: 10px;
+    }
+  
+    .waktuacara h2{
+      font-size: 5vw;
+      margin-bottom: 3vh;
+    }
+    .waktu{
+      margin-top: 50%;
+      height: 50%;
+    }
+    .waktu h3{
+      font-size: 5vw !important;
+    }
+    .waktu h1{
+      font-size: 10vw !important;
+    }
+    .flex1, .flex2{
+      width: 100%;
+      margin-top: 50px;
+    }
+   .flexbox{
+     flex-direction: column;
+     align-items: center;
+   }
+   .flexbox2{
+     flex-direction: column-reverse;
+     align-items: center;
+   }
+  
+   .img-nama{
+    margin-top: -60vw;
+   }
+  
+   .img-nama .containers{
+     padding : 10px;
+   }
+   .komen{
+    padding: 20px !important;
+   }
+   .komen h1{
+     margin-top: 10%;
+     font-size: 7vh;
+     margin-bottom: 30px;
+   }
+  
+   .ucap{
+     margin-top: 90px;
+   }
+  
+   .komen::before{
+     height: 70px;
+     width: 50px;
+     margin-bottom: -5vw;
+   }
+   .donasi img{
+     width: 100%;
+   }
+   strong{
+    font-size: 20px;
+    color: white;
+    margin: 10px;
+    text-shadow: 3px 3px 4px #000;
+   }
+   .ucap a{
+    font-size: 20px;
+    margin: 10px;
+   }
+  }
+  @media (min-width: 320px) and (max-width: 1024px) and (orientation: landscape){
+    .particles-content h1{
+      font-size: 5vw;
+    }
+    .particles-content h3{
+      font-size: 10vw;
+      display: none !important;
+    }
+    .particles-content .tampil{
+      display: block !important;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 900px) and (orientation: landscape){
+    .particles-content h1{
+      font-size: 5vw;
+      
+    }
+    .particles-content h3{
+      font-size: 5vw;
+      display : none;
+    }
+  
+    .particles-content .tampil{
+      display: block !important;
+    }
+  }
