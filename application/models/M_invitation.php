@@ -5,7 +5,7 @@ class M_invitation extends CI_Model{
 
 
     function tampil_ucapan($number,$offset){
-        return $query = $this->db->get('komentar',$number,$offset)->result();
+        return $query = $this->db->order_by('id_komentar','desc')->get('komentar',$number,$offset)->result();
     }
 
     function tambah_ucapan($data,$table){

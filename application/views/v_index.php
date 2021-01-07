@@ -102,7 +102,6 @@
     <div class="tempat">
       <div class="container">
         <div class="row">
-          
             <div class="col s12 m4">
               <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
@@ -146,41 +145,24 @@
         <div class="row flexbox">
           <div class="col s12 m12 l6 komentarinput flex1">
             <div class="row">
-            <form method="post" action="<?php echo base_url().'invitation/tambah_komentar';?>">
               <div class="input-field">
                 <i class="material-icons prefix white-text">account_circle</i>
-                <input type="text" name="user" id="autocomplete-input" class="white-text" required value="<?php echo $this->session->userdata("nama"); ?>">
+                <input type="text" name="user" id="autocomplete-input1" class="white-text" required value="<?php echo $this->session->userdata("nama"); ?>">
               </div>
               <div class="input-field">
                 <i class="material-icons prefix white-text">textsms</i>
-                <input type="text" name="komentar" id="autocomplete-input" class="validate white-text">
+                <input type="text" name="komentar" id="autocomplete-input2" class="validate white-text">
                 <label for="autocomplete-input" class="white-text">Ketik Ucapan</label>
               </div>
               <div class="post right">
-                <input type="submit" value="Post" class="btn">
+				<button onclick="postComment()" class="btn">POST</button>
                 <input type="button" onclick="modal()" value="donasi" class="btn red">
               </div>
-            </form>
           </div>              
         </div>
-
-          <div class="col l6 s12 m12 right flex2">
-            <div class="containers ucap" id="ucap">
-            <?php foreach($komentar as $komen) { ?>
-              <div class="ucapan" id="ucapan">
-                <p><?php echo $komen->user; ?></p> <br>
-                <p><h3><?php echo $komen->komentar; ?></h3></p>
-              </div>
-              <br><br>
-            <?php } ?>
-
-            
-            <center>
-            <?php echo $this->pagination->create_links();?>
-            </center>
-          </div>
-          
-        </div>
+		<div class="col l6 s12 m12 right flex2" id="kolomKomentar">
+            <?php $this->load->view('v_comment');?>	
+		</div>
         <br><br>
         <div class="row">
           <div class="col m5">
@@ -214,6 +196,27 @@
       M.Materialbox.init(materialbox);
 
       var donasi = document.getElementById('donasi');
+	  
+	  function postComment(){
+		  if($("#autocomplete-input2").val()=="")
+		  {
+			  alert("komentar tidak boleh kosong!");
+			  return false;
+		  }
+	   $.ajax({
+                type: "POST",
+                url: "invitation/tambah_komentar_ajax/",
+            data: {
+                user: $("#autocomplete-input1").val(),
+                komentar: $("#autocomplete-input2").val()
+            },
+            success: function (data) {
+				 $("#kolomKomentar").fadeOut();
+				 $("#kolomKomentar").html(data);
+				 $("#kolomKomentar").fadeIn(300);
+            }
+        });
+	}
 
       function modal(){
         donasi.style.display = 'block';
